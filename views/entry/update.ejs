@@ -1,0 +1,10 @@
+<a href="/entry/index">Back to the Blog</a>
+<h2>Update Blog-entry: <%= model.title %></h2>
+<form action="/entry/update/<%= model.id %>" method="POST">
+  <label for="entry-title">Title</label>
+  <input id="entry-title" type="text" name="Entry[title]" value="<%= model.title %>">
+  <label for="entry-content">Content</label>
+  <textarea name="Entry[content]" id="entry-content" cols="30" rows="10" value="<%= model.content %>">
+  </textarea>
+  <button>Update it!</button>
+</form>

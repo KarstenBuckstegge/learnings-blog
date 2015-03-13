@@ -1,0 +1,16 @@
+<a href="/entry/create">Create new Blog Post</a>
+
+<ul>
+  <% entries.forEach( function(model) { %>
+    <li>
+      <a href="/entry/show/<%= model.id %>">
+        <h2><%= model.title %></h2>
+      </a>
+      <ul>
+        <li><a href="/entry/update/<%= model.id %>">edit</a></li>
+        <li class="delete"><a href="/entry/delete/<%= model.id %>">delete</a></li>
+      </ul>
+      <p><%= model.content %></p>
+    </li>
+  <% }); %>
+</ul>
