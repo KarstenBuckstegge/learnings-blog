@@ -465,20 +465,24 @@ var parts=["source","protocol","authority","userInfo","user","password","host","
           return;
         }
 
+        // COMMENTED OUT!!! BROWSERIFY CRASHES WITH REQUIRE('REQUEST')
+        // BECAUSE IS TRYING TO ADD THE REQUEST PACKAGE BUT WE DONT NEED IT IN THE BROWSER
+        // SO IT CANT FIND IT AND THE COMPILATION EXPLOTES!
+
         // If there's no `window` object, we must be running in Node.js
         // so just require the request module and send the HTTP request that
         // way.
-        var mikealsReq = require('request');
-        mikealsReq.get(xOriginCookieURL, function(err, httpResponse, body) {
-          if (err) {
-            consolog(
-              'Failed to connect socket (failed to get cookie)',
-              'Error:', err
-            );
-            return;
-          }
-          cb();
-        });
+        // var mikealsReq = require('request');
+        // mikealsReq.get(xOriginCookieURL, function(err, httpResponse, body) {
+        //   if (err) {
+        //     consolog(
+        //       'Failed to connect socket (failed to get cookie)',
+        //       'Error:', err
+        //     );
+        //     return;
+        //   }
+        //   cb();
+        // });
 
       })(function goAheadAndActuallyConnect() {
 

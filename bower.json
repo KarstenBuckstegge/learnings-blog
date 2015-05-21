@@ -1,0 +1,9 @@
+{
+  "name": "learnings-blog",
+  "private": true,
+  "dependencies": {
+    "React": "0.13.3",
+    "Showdown": "~1.0.0"
+
+  }
+}
