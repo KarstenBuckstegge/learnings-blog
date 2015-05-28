@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 
   grunt.config.set('uglify', {
     dist: {
-      src: ['.tmp/public/browserify/debug.' + version + '.js'],
+      src: ['.tmp/public/js/app.' + version + '.js'],
       dest: '.tmp/public/min/production.' + version + '.min.js'
     }
   });

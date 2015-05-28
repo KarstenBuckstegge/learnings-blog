@@ -24,9 +24,9 @@ module.exports = function(grunt) {
 				appRoot: '.tmp/public'
 			},
 			files: {
-				'.tmp/public/**/*.html': ['.tmp/public/browserify/debug.' + version + '.js'],
-				'views/**/*.html': ['.tmp/public/browserify/debug.' + version + '.js'],
-				'views/**/*.ejs': ['.tmp/public/browserify/debug.' + version + '.js']
+				'.tmp/public/**/*.html': ['.tmp/public/js/app.' + version + '.js'],
+				'views/**/*.html': ['.tmp/public/js/app.' + version + '.js'],
+				'views/**/*.ejs': ['.tmp/public/js/app.' + version + '.js']
 			}
 		},
 
@@ -39,9 +39,9 @@ module.exports = function(grunt) {
 				relative: true
 			},
 			files: {
-				'.tmp/public/**/*.html': ['.tmp/public/browserify/debug.' + version + '.js'],
-				'views/**/*.html': ['.tmp/public/browserify/debug.' + version + '.js'],
-				'views/**/*.ejs': ['.tmp/public/browserify/debug.' + version + '.js']
+				'.tmp/public/**/*.html': ['.tmp/public/js/app.' + version + '.js'],
+				'views/**/*.html': ['.tmp/public/js/app.' + version + '.js'],
+				'views/**/*.ejs': ['.tmp/public/js/app.' + version + '.js']
 			}
 		},
 

@@ -14,10 +14,10 @@ module.exports = function(grunt) {
   grunt.config.set('browserify', {
     js: {
       src : require('../pipeline').browserifyMainFile,
-      dest: '.tmp/public/browserify/debug.' + version + '.js'
+      dest: '.tmp/public/js/app.' + version + '.js'
     },
     options: {
-      transform: ['reactify', 'babelify']
+      transform: ['babelify']
     }
   });
 

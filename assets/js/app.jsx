@@ -1,6 +1,7 @@
+// import babelifyPolyfill from 'babelify/polyfill';
 // var io = require('./dependencies/sails.io.js')();
-var React = require('react');
-var Title = require('./react/title');
+import React from 'react';
+import Title from './components/title.jsx';
 
 console.log('Sails.sockets.io', io);
 
