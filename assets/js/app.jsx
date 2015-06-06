@@ -3,13 +3,15 @@
 import React from 'react';
 import Title from './components/title.jsx';
 
-console.log('Sails.sockets.io', io);
-
 var babel = function babel(val) {
   val.map( x => x * 2);
 };
 
-React.render(
-  <Title />,
-  document.getElementById('main-title')
-);
+class App extends React.Component {
+  render() {
+    // console.log('================================== props: ', this.props);
+    return <div>Aloa!</div>
+  }
+}
+
+export default App;

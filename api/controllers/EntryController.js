@@ -11,10 +11,11 @@ module.exports = {
    * `EntryController.index()`
    */
   index: function (req, res) {
-    Entry.find().exec(function(err, entries) {
-      res.render('entry/index',{'entries':entries});
-      return;
-    });
+    res.ok();
+    // Entry.find().exec(function(err, entries) {
+    //   res.render('blog/list',{'entries':entries});
+    //   return;
+    // });
   },
 
   /**
@@ -27,12 +28,12 @@ module.exports = {
           res.send('ERROR: Entry could not be created!');
         }
         else {
-          res.redirect('entry/show/'+model.id);
+          res.redirect('blog/show/'+model.id);
         }
       });
     }
     else {
-      res.render('entry/create');
+      res.render('blog/create');
     }
   },
 
@@ -42,7 +43,7 @@ module.exports = {
   show: function (req, res) {
     var id=req.param('id',null);
     Entry.findOne(id).exec(function(err, model){
-      res.render('entry/show',{'model':model});
+      res.render('blog/show',{'model':model});
     });
   },
 
@@ -63,12 +64,12 @@ module.exports = {
             res.send('Entry could not be modified!');
           }
           else {
-            res.redirect('entry/show/'+model.id);
+            res.redirect('blog/show/'+model.id);
           }
         });
       }
       else {
-        res.render('entry/update',{'model':model});
+        res.render('blog/update',{'model':model});
       }
     });
   },
@@ -81,7 +82,7 @@ module.exports = {
 
     Entry.findOne(id).exec(function(err, entry){
       entry.destroy(function(err){
-        res.redirect('entry/index');
+        res.redirect('blog/list');
       });
     });
   }

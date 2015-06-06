@@ -11,12 +11,22 @@
  *          - pass string to render specified view
  */
 
+require('babel/register');
+ var React = require('react');
+
+ var App = require('../../assets/js/app.jsx');
+ var app = React.createFactory(App);
+
 module.exports = function sendOK (data, options) {
 
   // Get access to `req`, `res`, & `sails`
   var req = this.req;
   var res = this.res;
   var sails = req._sails;
+
+  // locals
+  data = data || {};
+  data.locals = res.locals;
 
   sails.log.silly('res.ok() :: Sending 200 ("OK") response');
 
@@ -32,17 +42,11 @@ module.exports = function sendOK (data, options) {
   // If it was omitted, use an empty object (`{}`)
   options = (typeof options === 'string') ? { view: options } : options || {};
 
-  // If a view was provided in options, serve it.
-  // Otherwise try to guess an appropriate view, or if that doesn't
-  // work, just send JSON.
-  if (options.view) {
-    return res.view(options.view, { data: data });
-  }
+  // console.log(app);
 
-  // If no second argument provided, try to serve the implied view,
-  // but fall back to sending JSON(P) if no view can be inferred.
-  else return res.guessView({ data: data }, function couldNotGuessView () {
-    return res.jsonx(data);
+  res.view('index', {
+    data: data,
+    app: React.renderToString(app(data))
   });
 
 };
