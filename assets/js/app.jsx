@@ -1,16 +1,13 @@
 // import babelifyPolyfill from 'babelify/polyfill';
 // var io = require('./dependencies/sails.io.js')();
-import React from 'react';
-import Title from './components/title.jsx';
+import React    from 'react';
 
-var babel = function babel(val) {
-  val.map( x => x * 2);
-};
+import Routes   from './routing.jsx';
 
 class App extends React.Component {
   render() {
-    // console.log('================================== props: ', this.props);
-    return <div>Aloa!</div>
+    var route = this.props.route;
+    <Routes route="route" />
   }
 }
 

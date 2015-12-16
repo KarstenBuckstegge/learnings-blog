@@ -42,8 +42,6 @@ module.exports = function sendOK (data, options) {
   // If it was omitted, use an empty object (`{}`)
   options = (typeof options === 'string') ? { view: options } : options || {};
 
-  // console.log(app);
-
   res.view('index', {
     data: data,
     app: React.renderToString(app(data))

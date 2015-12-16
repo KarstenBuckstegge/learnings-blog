@@ -5,7 +5,7 @@ export default class Title extends React.Component {
   render() {
     return (
       <span>
-        Hello Reactive Sails!
+        Dat Blog...
       </span>
     );
   }

@@ -11,7 +11,9 @@ module.exports = {
    * `EntryController.index()`
    */
   index: function (req, res) {
-    res.ok();
+    res.ok({
+      route: "title"
+    });
     // Entry.find().exec(function(err, entries) {
     //   res.render('blog/list',{'entries':entries});
     //   return;
